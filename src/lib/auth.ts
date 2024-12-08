@@ -23,13 +23,16 @@ export const NEXT_AUTH = {
           if(userEcicterd){
 
           }
-
-        const craeteUser =   await db.user.create({
-            data:{
-              email,
-              password:hashedPassword,
-            },
-          })
+  const craeteUser = {
+    email :"test",
+    password:"test"
+  }
+        // const craeteUser =   await db.user.create({
+        //     data:{
+        //       email,
+        //       password:hashedPassword,
+        //     },
+        //   })
           return craeteUser;
       },
     }),
