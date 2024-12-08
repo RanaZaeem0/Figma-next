@@ -9,13 +9,13 @@ import Link from "next/link";
 export default function Home() {
   return (
     <>
-      <div className="h-screen w-full bg-cover bg-center" style={{ backgroundImage: "url('/Rectangle1.png')" }}>
+      <div className="h-screen w-full max-md:flex flex-col max-md:bg-no-repeat bg-cover bg-center" style={{ backgroundImage: "url('/Rectangle1.png')" }}>
         <div className="flex items-start justify-start h-full">
           <div className="w-1/2 ml-12 mt-10">
             <Image src="/Vector.png" alt="dasd" width={20} height={40} />
             <Image src="/Vector.png" alt="dasd" width={40} height={60} className="right-10 absolute" />
-            <h1 className="p-1 text-7xl font-extrabold text-nowrap">FIND CLOTUS <br /> THAT MATCH <br /> YOUR STYLE   </h1>
-            <p className="font-light p-1 ">Browse through our diverse range of meticulously crafted garments, designed to bring out your individuality and cater to your sense of style.</p>
+            <h1 className="p-1 text-7xl max-md:text-4xl font-extrabold text-nowrap">FIND CLOTUS <br /> THAT MATCH <br /> YOUR STYLE   </h1>
+            <p className="font-light p-1 max-md:text-sm ">Browse through our diverse range of meticulously crafted garments, designed to bring out your individuality and cater to your sense of style.</p>
             <Button className="rounded-xl m-2">
               Shop Now
             </Button>
@@ -46,11 +46,11 @@ export default function Home() {
         <Image src="/zaralogo.png" alt="dasd" width={150} height={400} />
       </div>
       <div className="p-4">
-        <h1 className="text-4xl font-extrabold items-center flex justify-center">NEW ARRIVALS</h1>
+        <h1 className="text-4xl max-md:text-3xl font-extrabold items-center flex justify-center">NEW ARRIVALS</h1>
 
 
         <div className="">
-          <div className="grid grid-cols-4 mt-10">
+          <div className="grid grid-cols-4 max-md:grid-cols-2 mt-10">
 
             <Card imageUrl="/Frame 38.png" name={"T-Shirt best"} price="130" />
             <Card imageUrl={"/Frame 33.png"} name={"T-Shirt best"} price="130" />
@@ -67,20 +67,23 @@ export default function Home() {
         <div className="p-4 border-t border-black">
           <h1 className="text-4xl font-extrabold items-center flex justify-center">TOP SALES</h1>
 
-          <div className="grid grid-cols-4 mt-10">
+          <div className="grid grid-cols-4 mt-10 max-md:grid-cols-2">
 
             <Card imageUrl="/Frame 32.png" name={"T-Shirt best"} price="130" />
             <Card imageUrl={"/Frame 38.png"} name={"T-Shirt best"} price="130" />
-            <Card imageUrl={"/Frame 38 (1).png"} name={"T-Shirt best"} price="130" />
-            <Card imageUrl={"/Frame 32 (1).png"} name={"T-Shirt best"} price="130" />
+            <Card className="max-md:hidden" imageUrl={"/Frame 38 (1).png"} name={"T-Shirt best"} price="130" />
+            <Card className="max-md:hidden" imageUrl={"/Frame 32 (1).png"} name={"T-Shirt best"} price="130" />
           </div>
+          <Button>
+            View All
+          </Button>
         </div>
         {/* Banner  */}
         <div className="w-full h-full flex items-center justify-center ">
-          <div className="bg-zinc-200 rounded-2xl w-5/6   relative pb-10 flex items-center justify-center flex-col gap-2 ">
-            <h1 className="pt-5 pb-5 text-3xl font-extrabold">BROWSE BY DRESS STYLE</h1>
-            <div className="flex relative items-center justify-center gap-2 w-full ">
-              <div className="relative w-3/12 h-44 overflow-hidden rounded-lg">
+          <div className="bg-zinc-200 rounded-2xl w-5/6 max-md:w-full  relative pb-10 flex items-center justify-center flex-col gap-2 ">
+            <h1 className="pt-5 pb-5 text-3xl max-md:text-2xl p-2 font-extrabold">BROWSE BY DRESS STYLE</h1>
+            <div className="flex max-md:flex-col relative items-center justify-center gap-2 w-full ">
+              <div className="relative w-3/12 max-md:w-11/12  h-44 overflow-hidden rounded-lg">
                 <Image
                   src={"/image 11.png"}
                   alt={"alt"}
@@ -92,7 +95,7 @@ export default function Home() {
                   <p className="text-text text-1xl font-semibold">Casual</p>
                 </div>
               </div>
-              <div className="relative w-1/2  overflow-hidden rounded-lg h-44">
+              <div className="relative w-1/2 max-md:w-11/12  overflow-hidden rounded-lg h-44">
                 <Image
                   src={"/image 13.png"}
                   alt={"alt"}
@@ -105,8 +108,8 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="flex relative items-center justify-center gap-2 w-full ">
-              <div className="relative w-3/12 h-44 overflow-hidden rounded-lg">
+            <div className="flex max-md:flex-col relative items-center justify-center gap-2 w-full ">
+              <div className="relative w-3/12 max-md:w-11/12 h-44 overflow-hidden rounded-lg">
                 <Image
                   src={"/image 12.png"}
                   alt={"alt"}
@@ -118,7 +121,7 @@ export default function Home() {
                   <p className="text-text text-1xl font-semibold">Party</p>
                 </div>
               </div>
-              <div className="relative w-1/2  overflow-hidden rounded-lg h-44">
+              <div className="relative w-1/2 max-md:w-11/12  overflow-hidden rounded-lg h-44">
                 <Image
                   src={"/image 14.png"}
                   alt={"alt"}
@@ -151,10 +154,10 @@ export default function Home() {
         {/* Contant */}
 
       </div>
-      <div className="mt-10 flex items-center justify-center">
-        <div className="w-full flex items-center justify-center flex-col">
-          <div className="w-4/5 bg-black text-white p-4 rounded-3xl flex ">
-            <div className="flex items-center w-full justify-between p-5">
+      <div className="mt-10 flex  items-center justify-center">
+        <div className="w-full flex  items-center justify-center flex-col">
+          <div className="w-4/5 max-md:w-11/12 bg-black  text-white p-4 rounded-3xl flex ">
+            <div className="flex items-center max-md:flex-col gap-2 w-full justify-between p-5">
               <h1 className="text-3xl font-extrabold">STAY UPTO DATE ABOUT  <br /> OUR LATEST OFFERS</h1>
               <div className="flex flex-col w-72 gap-2">
                 <Input className="rounded-3xl text-black bg-white " placeholder="Serach .." />
@@ -163,7 +166,7 @@ export default function Home() {
             </div>
           </div>
           <footer className="w-full bg-slate-200">
-            <div className=" h-96 w-full flex items-center justify-around gap-2 border-b ">
+            <div className=" h-96 max-md:h-auto grid max-md:grid-cols-2  w-full grid-cols-5 items-center justify-around gap-2 border-b ">
               <div className="p-2">
                 <Link href="/" className="text-2xl font-bold text-gray-800 pl-2">
                   <Image src="/SHOP.CO.png" alt="Shop Logo" width={150} height={400} />

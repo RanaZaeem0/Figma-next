@@ -54,7 +54,7 @@ export default function Navbar() {
               ))}
               
               <div className="flex items-center justify-center gap-2">
-          <div className="flex bg-zinc-100 border items-center justify-center rounded-2xl p-1 w-96">
+          <div className="flex bg-zinc-100 border items-center justify-center rounded-2xl px-1  w-96">
             <Search/>
           <Input className='border-none ' placeholder='Serach...' type='text' />
           </div>
