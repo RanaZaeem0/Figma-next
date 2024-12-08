@@ -4,7 +4,7 @@ import * as React from 'react'
 import Link from 'next/link'
 import Image from 'next/image' // Import Next.js Image component
 import { usePathname } from 'next/navigation'
-import { Menu, X } from 'lucide-react'
+import { Menu, Search, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import {
   DropdownMenu,
@@ -33,15 +33,17 @@ export default function Navbar() {
           <div className="flex">
             <div className="flex-shrink-0 flex items-center">
               <Link href="/" className="text-2xl font-bold text-gray-800">
-                <Image src="/SHOP.CO.png" alt="Shop Logo" width={40} height={40} />
+                <Image src="/SHOP.CO.png" alt="Shop Logo" width={80} height={50} />
               </Link>
             </div>
-            <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
+           
+          </div>
+          <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
               {navItems.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className={`inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium ${
+                  className={`inline-flex items-center px-1 pt-1 border-b-2 text-sm font-normal ${
                     pathname === item.href
                       ? 'border-primary text-gray-900'
                       : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'
@@ -52,18 +54,15 @@ export default function Navbar() {
               ))}
               
               <div className="flex items-center justify-center gap-2">
-              <Input placeholder='Serach...' type='text' />
+          <div className="flex bg-zinc-100 border items-center justify-center rounded-2xl p-1 w-96">
+            <Search/>
+          <Input className='border-none ' placeholder='Serach...' type='text' />
+          </div>
               <Image src="/Frame.png" alt=" Shop" width={20} height={40} />
               <Image src="/Frame1.png" alt=" Shop" width={20} height={40} />
               
               </div>
             </div>
-          </div>
-          <div className="hidden sm:ml-6 sm:flex sm:items-center">
-            <Button variant="outline" onClick={() => signIn()}>
-              Sign in
-            </Button>
-          </div>
           <div className="-mr-2 flex items-center sm:hidden">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
