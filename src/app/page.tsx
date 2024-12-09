@@ -6,77 +6,107 @@ import Swiper1 from "@/components/custom/Swiper";
 import Testimonial from "@/components/custom/Testimonial";
 import { FaFacebook, FaGithub, FaInstagram, FaTwitter } from "react-icons/fa";
 import Link from "next/link";
+import { Swiper } from "swiper/types";
+import { useState } from "react";
+import { log } from "console";
 export default function Home() {
+
+
+
+  
+
+
+
   return (
     <>
-      <div className="h-screen w-full max-md:flex flex-col max-md:bg-no-repeat bg-cover bg-center" style={{ backgroundImage: "url('/Rectangle1.png')" }}>
-        <div className="flex items-start justify-start h-full">
-          <div className="w-1/2 ml-12 mt-10">
-            <Image src="/Vector.png" alt="dasd" width={20} height={40} />
-            <Image src="/Vector.png" alt="dasd" width={40} height={60} className="right-10 absolute" />
-            <h1 className="p-1 text-7xl max-md:text-4xl font-extrabold text-nowrap">FIND CLOTUS <br /> THAT MATCH <br /> YOUR STYLE   </h1>
-            <p className="font-light p-1 max-md:text-sm ">Browse through our diverse range of meticulously crafted garments, designed to bring out your individuality and cater to your sense of style.</p>
-            <Button className="rounded-xl m-2">
-              Shop Now
-            </Button>
-            <div className=" flex items-center p-2 gap-1">
-              <div className="flex items-start flex-col border-r p-2 border-black ">
-                <h2 className="text-2xl font-bold">200+</h2>
-                <p>International Brands</p>
-              </div>
-              <div className="flex items-start flex-col border-r p-2 border-black ">
-                <h2 className="text-2xl font-bold">20000+</h2>
-                <p>High Quality Product</p>
-              </div>
-              <div className="flex items-start flex-col  p-2 border-black ">
-                <h2 className="text-2xl font-bold">30000+</h2>
-                <p>Happy Customs</p>
-              </div>
-            </div>
-          </div>
+     <div className=" w-full flex flex-col  ">
+  {/* Background Image */}
+
+
+  {/* Content Section */}
+  <div className="flex flex-col md:flex-row items-center justify-start h-full relative">
+  <img 
+      src="/Rectangle1.png" 
+      alt="home" 
+      className="w-full h-full max-md:hidden relative " 
+    />
+    <div className="w-1/2 max-md:w-full max-md:ml-0 ml-4 md:ml-12 max-md:mt-0 mt-10 absolute max-md:relative  ">
+      <Image src="/Vector.png" alt="decorative vector" width={20} height={40} />
+      <Image src="/Vector.png" alt="decorative vector" width={40} height={60} className="absolute max-md:hidden right-10 " />
+      <h1 className="p-1 text-4xl md:text-7xl font-extrabold text-nowrap">
+        FIND CLOTUS <br /> THAT MATCH <br /> YOUR STYLE
+      </h1>
+      <p className="font-light p-1 text-sm md:text-base">
+        Browse through our diverse range of meticulously crafted garments, designed to bring out your individuality and cater to your sense of style.
+      </p>
+      <Button className="rounded-xl m-2">
+        Shop Now
+      </Button>
+      <div className="flex items-center  p-2 gap-1">
+        <div className="flex items-start flex-col border-r p-2 border-black">
+          <h2 className="text-2xl max-md:text-lg font-bold">200+</h2>
+          <p className="text-sm">International Brands</p>
+        </div>
+        <div className="flex items-start flex-col border-r p-2 border-black">
+          <h2 className="text-2xl max-md:text-lg font-bold">20000+</h2>
+          <p className="text-sm">High Quality Product</p>
+        </div>
+        <div className="flex items-start flex-col p-2 border-black">
+          <h2 className="text-2xl max-md:text-lg font-bold">30000+</h2>
+          <p className="text-sm">Happy Customers</p>
         </div>
       </div>
+    </div>
+
+    {/* Mobile-Only Image */}
+   <div className="w-full h-full relative ">
+   <Image src="/Vector.png" alt="decorative vector" width={20} height={40} />
+    <Image src="/Vector.png" alt="decorative vector" width={40} height={60} className="absolute right-10 bottom-10 " />
+    <img 
+      src="/Rectangle 2 (1).png" 
+      alt="home" 
+      className="w-1/2 max-md:w-full  h-full object-contain max-md:block hidden" 
+    />
+   </div>
+  </div>
+</div>
+
       {/* this branner */}
-      <div className="flex items-center justify-around gap-2 w-full bg-black p-4
+      <div className="flex max-md:h-16  items-center justify-around  w-full bg-black 
 ">
 
-        <Image src="/Group1.png" alt="dasd" width={200} height={500} />
-        <Image src="/gucci-logo-1.png" alt="dasd" width={200} height={500} />
-        <Image src="/prada-logo-1.png" alt="dasd" width={200} height={500} />
-        <Image src="/zaralogo.png" alt="dasd" width={150} height={400} />
+        <img src="/Group1.png" alt="dasd"  className="w-1/5"/>
+        <img src="/gucci-logo-1.png" alt="dasd" className="w-1/5"  />
+        <img src="/prada-logo-1.png" alt="dasd" className="w-1/5" />
+        <img src="/zaralogo.png" alt="dasd" className="w-1/5" />
       </div>
       <div className="p-4">
         <h1 className="text-4xl max-md:text-3xl font-extrabold items-center flex justify-center">NEW ARRIVALS</h1>
 
 
-        <div className="">
-          <div className="grid grid-cols-4 max-md:grid-cols-2 mt-10">
-
-            <Card imageUrl="/Frame 38.png" name={"T-Shirt best"} price="130" />
-            <Card imageUrl={"/Frame 33.png"} name={"T-Shirt best"} price="130" />
+        <div className="w-full pt-5">
+            <Swiper1  img1="/Frame 33.png" img3="/Frame 33.png" img2="/Frame 33.png" img4="/Frame 33.png" />
+          <div className="grid grid-cols-4 max-md:grid-cols-2 mt-10 w-full">
+            {/* <Card imageUrl={"/Frame 33.png"} name={"T-Shirt best"} price="130" />
             <Card imageUrl={"/Frame 33 (1).png"} name={"T-Shirt best"} price="130" />
-            <Card imageUrl={"/Frame 34 (1).png"} name={"T-Shirt best"} price="130" />
+            <Card imageUrl={"/Frame 34 (1).png"} name={"T-Shirt best"} price="130" /> */}
           </div>
           <div className="flex items-center justify-center pt-5 pb-2 w-full">
-            <Button className=" rounded-2xl p-2 ">
+            <Button variant="outline" className=" rounded-3xl font-light text-lg px-14 py-3   ">
               View All
             </Button>
           </div>
         </div>
 
-        <div className="p-4 border-t border-black">
-          <h1 className="text-4xl font-extrabold items-center flex justify-center">TOP SALES</h1>
+        <div className="p-4 border-t border-black w-full" >
+          <h1 className="text-5xl font-extrabold items-center pb-5 flex justify-center">TOP SALES</h1>
+          <Swiper1  img1="/Frame 32.png" img3="/Frame 38.png" img2="/Frame 38 (1).png" img4="/Frame 32 (1).png" />
 
-          <div className="grid grid-cols-4 mt-10 max-md:grid-cols-2">
-
-            <Card imageUrl="/Frame 32.png" name={"T-Shirt best"} price="130" />
-            <Card imageUrl={"/Frame 38.png"} name={"T-Shirt best"} price="130" />
-            <Card className="max-md:hidden" imageUrl={"/Frame 38 (1).png"} name={"T-Shirt best"} price="130" />
-            <Card className="max-md:hidden" imageUrl={"/Frame 32 (1).png"} name={"T-Shirt best"} price="130" />
+          <div className="flex items-center justify-center pt-5 pb-2 w-full">
+            <Button variant="outline" className=" rounded-3xl font-light text-lg px-14 py-3   ">
+              View All
+            </Button>
           </div>
-          <Button>
-            View All
-          </Button>
         </div>
         {/* Banner  */}
         <div className="w-full h-full flex items-center justify-center ">
